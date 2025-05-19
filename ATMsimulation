@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int deposit, withdraw, checkBalance, choose, inputPin;
+    int pin = 9013;
+    int balance = 13892;
+
+    cout << "Enter your bank account pin: ";
+    cin >> inputPin;
+
+    if (inputPin == pin)
+    {
+        cout << "Authentication successful!\n\n";
+    }
+    else
+    {
+        cout << "Incorrect password!";
+        return 1;
+    }
+
+    cout << "1. withdraw \n";
+    cout << "2. deposit \n ";
+    cout << "3. check balance\n\n";
+    cout << "choose a number:\n ";
+    cin >> choose;
+    cout << endl;
+
+    if (choose == 1)
+    {
+        cout << "how much would you like to withdraw?\n";
+        cout << "enter amount: ";
+        cin >> withdraw;
+        cout << endl;
+        cout << "Withdrawal successful! \n\n";
+        cout << "total balance left: " << balance - withdraw << endl;
+    }
+    else if (choose == 2)
+    {
+        cout << "how much would you like to deposit?\n";
+        cout << "enter amount: ";
+        cin >> deposit;
+        cout << endl;
+        cout << "Deposit successful \n\n";
+        cout << "total balance left: " << balance + deposit << endl;
+    }
+    else if (choose == 3)
+    {
+        cout << "this is your current balance: " << balance;
+    }
+    else
+    {
+        cout << " invalid option";
+    }
+
+    return 0;
+}
