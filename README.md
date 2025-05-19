@@ -1,0 +1,84 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string answer1 = "mercury", answer2 = "mars", answer3 = "eight", answer4 = "gravity", answer5 = "photosynthesis";
+    string userAnswer;
+    int score = 0;
+
+    cout << "Hi! this is a science quiz that i made, please take note that answers here are case sensitive so make sure to write your answer in lowercase letters\n\n";
+
+    cout << "1. what planet is the closest to the sun?\n";
+    cout << "answer: ";
+    cin >> userAnswer;
+    if (userAnswer == answer1)
+    {
+        (++score);
+        cout << " your answer is correct! \n";
+    }
+    else
+    {
+        cout << "your answer is incorrect.\n";
+    }
+
+    cout << "2. what planet is known as the red planet?\n";
+    cout << "answer: ";
+    cin >> userAnswer;
+
+    if (userAnswer == answer2)
+    {
+        (++score);
+        cout << "your answer is correct!\n";
+    }
+    else
+    {
+        cout << "your answer is incorrect.\n";
+    }
+
+    cout << "3. how many planets are there in the solar systrm?\n";
+    cout << "answer: ";
+    cin >> userAnswer;
+
+    if (userAnswer == answer3)
+    {
+        (++score);
+        cout << "your answer is correct!\n";
+    }
+    else
+    {
+        cout << "your answer is incorrect.\n";
+    }
+
+    cout << "4. what force pulls an object towards the center of the earth? \n";
+    cout << "answer: ";
+    cin >> userAnswer;
+
+    if (userAnswer == answer4)
+    {
+        (++score);
+        cout << "your answer is correct!\n";
+    }
+    else
+    {
+        cout << "your answer is incorrect.\n";
+    }
+
+    cout << "5. a process by which, a plant produces their own food.\n";
+    cout << "answer: ";
+    cin >> userAnswer;
+
+    if (userAnswer == answer5)
+    {
+        (++score);
+                cout
+            << "your answer is correct!\n\n";
+    }
+    else
+    {
+        cout << " your answer is incorrect.\n\n";
+    }
+
+    cout << "your total score: " << score << " out of 5";
+}
