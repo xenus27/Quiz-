@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+    int dividend, divisor, result;
+    
+    for (int baby = 1; baby <= 1000; baby++)
+    {
+    
+    
+    cout << "this program will check if a number is divisible by another number (if it results to a whole number)\n\n";
+    
+    cout << "choose a dividend: ";
+    cin >> dividend;
+    
+    cout << endl;
+    
+    cout << "choose a divisor: ";
+    cin >> divisor; 
+    
+    cout << endl;
+    
+        result = dividend % divisor;
+        if (result!=0)
+        {
+         cout << "this number is not divisible\n\n";
+         }
+         else
+         {
+           cout << "this number is divisible\n\n";
+         }
+    
+    
+    }
+    return 0;
+   
+}
