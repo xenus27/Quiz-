@@ -1,0 +1,268 @@
+#include <iostream>
+#
+using namespace std;
+
+void basicCalculator();
+void ATMsimulation();
+void scienceQuiz();
+void divisibleNumberChecker();
+
+int main()
+{
+    int userChoice;
+    int looper = 1;
+    while (looper <= 100)
+    {
+        (looper++);
+
+        cout << "choose a program:\n\n"
+             << "1.basic calculator\n"
+             << "2.ATMsimulation\n"
+             << "3.scienceQuiz\n"
+             << "4.divisibleNumberChecker\n\n";
+
+        cin >> userChoice;
+
+        cout << endl;
+
+        if (userChoice == 1)
+        {
+            basicCalculator();
+        }
+        if (userChoice == 2)
+        {
+            ATMsimulation();
+        }
+        if (userChoice == 3)
+        {
+            scienceQuiz();
+        }
+        if (userChoice == 4)
+        {
+            divisibleNumberChecker();
+        }
+    }
+    return 0;
+}
+void basicCalculator()
+{
+    int num1, num2;
+    char op; // for operators (+,-,*,/)
+    double result;
+
+    cout << "write the first number: ";
+    cin >> num1;
+
+    cout << "choose an operator (+,-,*,/): ";
+    cin >> op;
+
+    cout << "write the second number: ";
+    cin >> num2;
+
+    if (op == '+')
+    {
+        result = num1 + num2;
+        cout << "result: " << result << endl
+             << endl;
+    }
+    else if (op == '-')
+    {
+        result = num1 - num2;
+        cout << "result: " << result << endl
+             << endl;
+    }
+    else if (op == '*')
+    {
+        result = num1 * num2;
+        cout << "result: " << result << endl
+             << endl;
+    }
+    else if (op == '/')
+    {
+        if (num2 == 0)
+        {
+            cout << "invalid";
+        }
+
+        else
+        {
+            result = (double)num1 / num2;
+            cout << "result: " << result << endl
+                 << endl;
+        }
+    }
+    else
+    {
+        cout << "invalid operator\n";
+    }
+}
+
+void ATMsimulation()
+{
+    int deposit, withdraw, choose, inputPin;
+    int pin = 9013;
+    int balance = 13892;
+
+    cout << "Enter your bank account pin: ";
+    cin >> inputPin;
+
+    if (inputPin == pin)
+    {
+        cout << "Authentication successful!\n\n";
+    }
+    else
+    {
+        cout << "Incorrect password!";
+    }
+
+    cout << "1. withdraw \n";
+    cout << "2. deposit \n ";
+    cout << "3. check balance\n\n";
+    cout << "choose a number:\n ";
+    cin >> choose;
+    cout << endl;
+
+    if (choose == 1)
+    {
+        cout << "how much would you like to withdraw?\n";
+        cout << "enter amount: ";
+        cin >> withdraw;
+        cout << endl;
+        cout << "Withdrawal successful! \n\n";
+        cout << "total balance left: " << balance - withdraw << endl;
+    }
+    else if (choose == 2)
+    {
+        cout << "how much would you like to deposit?\n";
+        cout << "enter amount: ";
+        cin >> deposit;
+        cout << endl;
+        cout << "Deposit successful \n\n";
+        cout << "total balance left: " << balance + deposit << endl;
+    }
+    else if (choose == 3)
+    {
+        cout << "this is your current balance: " << balance;
+    }
+    else
+    {
+        cout << " invalid option";
+    }
+}
+
+void scienceQuiz()
+{
+    string answer1 = "mercury", answer2 = "mars", answer3 = "eight", answer4 = "gravity", answer5 = "photosynthesis";
+    string userAnswer;
+    int score = 0;
+
+    cout << "Hi! this is a science quiz that i made, please take note that answers here are case sensitive so make sure to write your answer in lowercase letters\n\n";
+
+    cout << "1. what planet is the closest to the sun?\n";
+    cout << "answer: ";
+    cin >> userAnswer;
+    cout << endl;
+
+    if (userAnswer == answer1)
+    {
+        (++score);
+        cout << " your answer is correct! \n\n";
+    }
+    else
+    {
+        cout << "your answer is incorrect.\n\n";
+    }
+
+    cout << "2. what planet is known as the red planet?\n";
+    cout << "answer: ";
+    cin >> userAnswer;
+    cout << endl;
+
+    if (userAnswer == answer2)
+    {
+        (++score);
+        cout << "your answer is correct!\n\n";
+    }
+    else
+    {
+        cout << "your answer is incorrect.\n\n";
+    }
+
+    cout << "3. how many planets are there in the solar systrm?\n";
+    cout << "answer: ";
+    cin >> userAnswer;
+    cout << endl;
+
+    if (userAnswer == answer3)
+    {
+        (++score);
+        cout << "your answer is correct!\n\n";
+    }
+    else
+    {
+        cout << "your answer is incorrect.\n\n";
+    }
+
+    cout << "4. what force pulls an object towards the center of the earth? \n";
+    cout << "answer: ";
+    cin >> userAnswer;
+    cout << endl;
+
+    if (userAnswer == answer4)
+    {
+        (++score);
+        cout << "your answer is correct!\n\n";
+    }
+    else
+    {
+        cout << "your answer is incorrect.\n\n";
+    }
+
+    cout << "5. a process by which, a plant produces their own food.\n";
+    cout << "answer: ";
+    cin >> userAnswer;
+    cout << endl;
+
+    if (userAnswer == answer5)
+    {
+        (++score);
+        cout
+            << "your answer is correct!\n\n";
+    }
+    else
+    {
+        cout << " your answer is incorrect.\n\n";
+    }
+
+    cout << "your total score: " << score << " out of 5";
+}
+
+void divisibleNumberChecker()
+{
+    int dividend, divisor, result;
+
+    for (int baby = 1; baby <= 1000; baby++)
+    {
+        cout << "this program will check if a number is divisible by another number (if it results to a whole number)\n\n";
+
+        cout << "choose a dividend: ";
+        cin >> dividend;
+
+        cout << endl;
+
+        cout << "choose a divisor: ";
+        cin >> divisor;
+
+        cout << endl;
+
+        result = dividend % divisor;
+        if (result != 0)
+        {
+            cout << "this number is not divisible\n\n";
+        }
+        else
+        {
+            cout << "this number is divisible\n\n";
+        }
+    }
+}
